@@ -1,0 +1,12 @@
+generated: '2026-07-18'
+method: derived
+source: openapi/automat-extract-openapi.json
+summary:
+  types:
+  - http
+schemes:
+- name: BearerAuthScheme
+  type: http
+  scheme: bearer
+  sources:
+  - openapi/automat-extract-openapi.json
