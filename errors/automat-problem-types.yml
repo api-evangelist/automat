@@ -1,0 +1,40 @@
+generated: '2026-07-18'
+method: derived
+source: openapi/automat-extract-openapi.json
+format: custom
+envelope:
+  description: >-
+    Errors are returned as a JSON object with a machine-readable `error` code and a human-readable
+    `message`. This is NOT RFC 9457 application/problem+json — it is Automat's own ErrorResponse
+    schema.
+  fields:
+    error: Machine-readable error code (e.g., "bad_request", "unauthorized")
+    message: Human-readable error message describing what went wrong
+problems:
+  - status: 400
+    error: bad_request
+    title: Bad Request
+    description: >-
+      The request is malformed or missing required fields. Check that you've provided all required
+      fields: `file` and `extractorId`.
+    source_operation: openapi/automat-extract-openapi.json#extract
+  - status: 401
+    error: unauthorized
+    title: Unauthorized
+    description: >-
+      The API key is missing, invalid, or has been revoked. Ensure you're using a valid API key in
+      the `Authorization: Bearer <api_key>` header.
+    source_operation: openapi/automat-extract-openapi.json#extract
+  - status: 422
+    error: unprocessable_entity
+    title: Extraction could not be completed
+    description: >-
+      The extraction could not be completed. This may occur if the extractor ID doesn't exist or you
+      don't have access to it, the document format is not supported, or the document could not be
+      processed.
+    source_operation: openapi/automat-extract-openapi.json#extract
+  - status: 500
+    error: internal_error
+    title: Internal Server Error
+    description: An unexpected error occurred. Please try again or contact support.
+    source_operation: openapi/automat-extract-openapi.json#extract

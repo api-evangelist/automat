@@ -1,0 +1,31 @@
+generated: '2026-07-18'
+method: probed
+source: live probes of /.well-known/ on Automat hosts
+hosts:
+  - host: https://runautomat.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+  - host: https://docs.runautomat.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+  - host: https://studio.runautomat.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+notes: >-
+  No /.well-known/ discovery documents are published on any Automat host as of this probe. Recorded
+  as honest negative data; no WellKnown/SecurityTxt scoring pointer is emitted since nothing was found.

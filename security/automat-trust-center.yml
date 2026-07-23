@@ -1,0 +1,18 @@
+generated: '2026-07-18'
+method: searched
+source: https://runautomat.com/llms.txt
+url: https://trust.runautomat.com/
+certifications:
+  - SOC 2
+  - ISO 27001
+  - HIPAA
+  - GDPR
+evidence:
+  - source: https://runautomat.com/llms.txt
+    quote: "SOC 2, GDPR, HIPAA, ISO 27001 certified"
+  - source: https://trust.runautomat.com/
+    note: Live trust center subdomain returns HTTP 200 (JavaScript-rendered trust portal).
+notes: >-
+  Certifications captured from Automat's own published llms.txt Key Differentiators section and the
+  live trust center subdomain. The trust portal is client-side rendered so the automated
+  keyword/cert extractor could not read it; the certification list here is the provider's own claim.

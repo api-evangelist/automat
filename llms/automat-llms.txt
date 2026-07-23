@@ -1,0 +1,59 @@
+# Automat
+
+## About
+Automat builds AI agents that operate computers the way people do. We replace legacy RPA tools like UiPath, Automation Anywhere, and Blue Prism with intelligent, self-healing managed automations. Founded in 2022 by ex-Google engineers Lucas Ochoa and Gautam Bose. Backed by Felicis, Khosla Ventures, Initialized Capital, and Y Combinator. $19M raised.
+
+## What We Do
+- UI-Based AI Agents (RPA): Browser and desktop automation using Computer Use -- agents that see screens, click buttons, and adapt when UIs change. Works on any software including SAP GUI, Citrix, and legacy web portals without APIs.
+- AI Document Extraction (IDP): Vision language models that extract, classify, and process data from unstructured documents -- invoices, claims, mortgage applications, medical records.
+- API-Based Automations (iPaaS): Orchestrate API integrations alongside UI and document automation in unified workflows.
+- Managed Service: Forward-deployed engineers build, deploy, and maintain automations. Customers share a screen recording or SOP; we deliver production automations in weeks.
+
+## Key Differentiators
+- Self-healing agents that adapt when UIs change (legacy RPA breaks)
+- Computer Use technology: AI agents that see screens and use mouse/keyboard like humans
+- Managed service model: no RPA developers or consultants needed
+- 10x faster deployment, 80% lower operational cost vs legacy RPA
+- Works on any platform including SAP, Citrix, Windows, and web portals
+- SOC 2, GDPR, HIPAA, ISO 27001 certified
+
+## Industries
+- Banking and Financial Services: credit disputes, card issuance, KYC verification, account servicing
+- Mortgage and Lending: document processing, disclosures, PDF classification, appraisal extraction
+- Insurance: claims processing, KYB verification, policy administration
+- Manufacturing: purchase order processing, inventory management, supplier reporting
+- Healthcare: EHR data entry, billing verification, lab and pharmacy integration
+- E-Commerce: order refunds, account administration, chargeback workflows
+- Back Office Operations: form filling, data entry, data conversion, web research
+
+## Customer Results
+- AmeriTrust: 80% reduction in cost per loan processed
+- Leopard: end-to-end data operations from legacy carrier portals with no APIs
+- Top 5 Health Insurer: 7+ figures saved processing millions of medical claims
+- Ento: 2,400 high-throughput parallelized automation runs per day
+- Vividly: end-to-end dispute filing automation across distributor websites
+
+## Technology
+- Powered by Anthropic (computer use) and Google Gemini (video processing)
+- Patented transformer-based demonstration-to-automation system
+- Vision Language Models for screen understanding and document extraction
+- Self-healing selectors that adapt to UI changes automatically
+
+## Links
+- Homepage: https://www.runautomat.com
+- Contact: https://www.runautomat.com/contact
+- Demo: https://demo.runautomat.com
+- Capabilities: https://www.runautomat.com/capabilities
+- Enterprise: https://www.runautomat.com/enterprise
+- About: https://www.runautomat.com/about
+- Careers: https://www.runautomat.com/careers
+- Blog: https://www.runautomat.com/blog
+
+## Key Blog Posts
+- Series A Announcement: https://www.runautomat.com/blog/automat-raises-15-5m-series-a
+- Automat vs UiPath: https://www.runautomat.com/blog/use-automat-or-ui-path
+- Bank Saves 7 Figures: https://www.runautomat.com/blog/banking-automations-saving-seven-figures-with-rpa-and-ai-document-processing
+- Insurance Saves 7 Figures: https://www.runautomat.com/blog/automat-saves-a-top-5-health-insurance-company-7-figures-by-processing-medical-claims-using-ai
+- Vision Fine-Tuning for RPA: https://www.runautomat.com/blog/how-to-fine-tune-gpt-4o-for-industry-specific-document-processing-and-robotic-process-automation
+- Document Processing Launch: https://www.runautomat.com/blog/introducing-automat-document-processing
+- Mortgage Automation: https://www.runautomat.com/blog/namb-mortgage-automation

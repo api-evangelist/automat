@@ -1,0 +1,14 @@
+{
+  "provider": "automat",
+  "sources": [
+    "automat-extract-api-openapi.yml"
+  ],
+  "outputs": [
+    "automat-extract-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

@@ -1,22 +1,73 @@
 aid: automat
 name: Automat
-description: 'Automat is a company surfaced as a portfolio company of initialized-capital and added to
-  the API Evangelist network as a stub for enrichment. Sector: enterprise-saas. This profile is a lead
-  awaiting the enrichment pipeline.'
+description: >-
+  Automat builds AI agents that operate computers the way people do, replacing legacy RPA tools
+  like UiPath, Automation Anywhere, and Blue Prism with intelligent, self-healing managed
+  automations. Founded in 2022 by ex-Google engineers, the platform combines UI-based AI agents
+  (RPA using Computer Use), AI document extraction (IDP with vision language models), and
+  API-based automations (iPaaS) into unified workflows delivered as a managed service. Automat
+  exposes a REST Extract API (studio.runautomat.com) for pulling structured data from PDFs,
+  images, and other documents against a configured extractor, plus a hosted MCP server for AI
+  client integration. Used across banking, mortgage and lending, insurance, manufacturing,
+  healthcare, and e-commerce operations, with SOC 2, GDPR, HIPAA, and ISO 27001 certification.
 url: https://raw.githubusercontent.com/api-evangelist/automat/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - initialized-capital
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: enriched
+x-tier-reason: portfolio-lead-enriched
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
+image: https://cdn.prod.website-files.com/690942210854e5c7d0b74b4e/690fc6fc0297c12536ccca4b_ab7962bb06ce21cd863411aefecd6599_Frame%20427322741.png
 tags:
 - Company
 - Enterprise Saas
-apis: []
+- Automation
+- RPA
+- Robotic Process Automation
+- Document Extraction
+- IDP
+- iPaaS
+- AI Agents
+- Computer Use
+- Document Processing
+apis:
+- aid: automat:automat-extract-api
+  name: Automat extract API
+  description: The extract API from Automat — 1 operation(s) for extract.
+  humanURL: https://docs.runautomat.com/api-reference
+  baseURL: https://studio.runautomat.com
+  tags:
+  - extract
+  properties:
+  - type: OpenAPI
+    url: openapi/automat-extract-api-openapi.yml
+  - type: APIReference
+    url: https://docs.runautomat.com/api-reference
+  - type: Authentication
+    url: authentication/automat-authentication.yml
+  - type: ErrorCatalog
+    url: errors/automat-problem-types.yml
+  - type: Conventions
+    url: conventions/automat-conventions.yml
+  - type: DataModel
+    url: data-model/automat-data-model.yml
+  - type: AgenticAccess
+    url: agentic-access/automat-agentic-access.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -24,4 +75,39 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: https://runautomat.com/
+  url: https://www.runautomat.com/
+- type: DeveloperPortal
+  url: https://docs.runautomat.com/
+- type: Documentation
+  url: https://docs.runautomat.com/
+- type: GettingStarted
+  url: https://docs.runautomat.com/guides/getting-started/introduction
+- type: APIReference
+  url: https://docs.runautomat.com/api-reference
+- type: MCPServer
+  url: mcp/automat-mcp.yml
+- type: Blog
+  url: https://www.runautomat.com/blog
+- type: Support
+  url: https://www.runautomat.com/contact
+- type: TermsOfService
+  url: https://www.runautomat.com/terms-of-service
+- type: TrustCenter
+  url: https://trust.runautomat.com/
+- type: Compliance
+  url: https://trust.runautomat.com/
+- type: LLMsTxt
+  url: llms/automat-llms.txt
+- type: Authentication
+  url: authentication/automat-authentication.yml
+- type: DomainSecurity
+  url: security/automat-domain-security.yml
+- type: Conformance
+  url: conformance/automat-conformance.yml
+- type: AgentSkill
+  url: skills/_index.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

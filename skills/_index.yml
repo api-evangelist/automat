@@ -1,0 +1,8 @@
+generated: '2026-07-18'
+method: generated
+source: openapi/automat-extract-openapi.json
+skills:
+  - file: automat-extract-document.md
+    name: Extract structured data from a document
+    api: openapi/automat-extract-openapi.json
+    operations: [extract]

@@ -1,0 +1,169 @@
+openapi: 3.1.0
+info:
+  title: extract API
+  version: 1.0.0
+servers:
+- url: https://studio.runautomat.com
+  description: Production
+tags:
+- name: extract
+paths:
+  /api/extract:
+    post:
+      operationId: extract
+      summary: Extract Document
+      description: 'Extract structured data from a document using a configured extractor.
+
+
+        Upload a document (PDF, image, or other supported format) along with an extractor ID,
+
+        and receive the extracted data matching your extractor''s schema.
+
+
+        **File Input Options:**
+
+        - **Binary upload**: Directly upload the file (max 4.5 MB)
+
+        - **Base64**: Pass base64-encoded file content (max 4.5 MB)
+
+        - **Data URL**: Pass a data URL (max 4.5 MB)
+
+        - **URL**: Pass a publicly accessible URL to the document (up to 35 MB)
+
+
+        **File Size Limits:**
+
+        Binary, Base64, and Data URL inputs are limited to **4.5 MB** on the Pay As You Go plan.
+
+        For larger files up to **35 MB**, use the URL option.
+
+        Need higher limits? Contact sales at https://runautomat.com/contact'
+      tags:
+      - extract
+      parameters:
+      - name: Authorization
+        in: header
+        description: Bearer authentication
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Response with status 200
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_extract:ExtractResponse'
+        '400':
+          description: 'The request is malformed or missing required fields.
+
+            Check that you''ve provided all required fields: `file` and `extractorId`.'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_extract:ErrorResponse'
+        '401':
+          description: 'The API key is missing, invalid, or has been revoked.
+
+            Ensure you''re using a valid API key in the `Authorization: Bearer <api_key>` header.'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_extract:ErrorResponse'
+        '422':
+          description: 'The extraction could not be completed. This may occur if:
+
+            - The extractor ID doesn''t exist or you don''t have access to it
+
+            - The document format is not supported
+
+            - The document could not be processed'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_extract:ErrorResponse'
+        '500':
+          description: An unexpected error occurred. Please try again or contact support.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/type_extract:ErrorResponse'
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                extractorId:
+                  type: string
+                  description: 'The unique identifier of the extractor to use for extraction.
+
+                    You can find this in the Automat dashboard or when creating an extractor via the API.'
+                file:
+                  type: string
+                  format: binary
+                  description: 'The document to extract data from. Can be:
+
+                    - A binary file upload
+
+                    - A URL string (http:// or https://)
+
+                    - A base64-encoded string
+
+                    - A data URL string'
+                mimeType:
+                  type: string
+                  description: 'The MIME type of the file. Required when `file` is a string (URL, base64, or data URL).
+
+                    Examples: `application/pdf`, `image/png`, `image/jpeg`'
+                filename:
+                  type: string
+                  description: "Optional filename for the document. If not provided, will be inferred from \nthe File object name or URL path."
+                extractorVersionId:
+                  type: string
+                  description: Pin extraction to a specific extractor version
+                config:
+                  type: object
+                  additionalProperties:
+                    description: Any type
+                  description: Override model configuration for this request
+                timeout:
+                  type: integer
+                  description: Timeout in seconds (1-300)
+              required:
+              - extractorId
+              - file
+components:
+  schemas:
+    type_extract:ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+          description: Machine-readable error code (e.g., "bad_request", "unauthorized")
+        message:
+          type: string
+          description: Human-readable error message describing what went wrong
+      required:
+      - error
+      - message
+      description: Standard error response format
+      title: ErrorResponse
+    type_extract:ExtractResponse:
+      type: object
+      properties:
+        data:
+          type: object
+          additionalProperties:
+            description: Any type
+          description: 'The extracted data matching your extractor''s schema.
+
+            The structure depends on how you configured your extractor.'
+      required:
+      - data
+      description: Response from a successful extraction request
+      title: ExtractResponse
+  securitySchemes:
+    BearerAuthScheme:
+      type: http
+      scheme: bearer

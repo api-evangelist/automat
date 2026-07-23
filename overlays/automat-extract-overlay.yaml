@@ -1,0 +1,22 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Automat Extract API
+  version: 1.0.0
+extends: openapi/automat-extract-openapi.json
+actions:
+  - target: $.info
+    update:
+      x-apievangelist-provider: automat
+      x-apievangelist-product: Document Extraction (IDP)
+      x-apievangelist-agentic-access: agentic-access/automat-agentic-access.yml
+      x-apievangelist-authentication: authentication/automat-authentication.yml
+      x-apievangelist-error-catalog: errors/automat-problem-types.yml
+  - target: $.info
+    update:
+      contact:
+        name: Automat Sales
+        url: https://www.runautomat.com/contact
+  - target: $.paths['/api/extract'].post
+    update:
+      x-apievangelist-action-class: acting
+      x-apievangelist-consequence: write

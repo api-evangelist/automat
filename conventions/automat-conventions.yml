@@ -1,0 +1,35 @@
+generated: '2026-07-18'
+method: derived
+source: openapi/automat-extract-openapi.json
+authentication:
+  style: bearer
+  header: Authorization
+  format: "Bearer <api_key>"
+  see: authentication/automat-authentication.yml
+idempotency:
+  supported: false
+  note: No idempotency-key header or parameter is documented in the Extract API OpenAPI.
+pagination:
+  supported: false
+  note: The published Extract API is a single synchronous extraction operation with no list/collection endpoints.
+request_body:
+  formats:
+    - multipart/form-data
+  file_input_options:
+    - binary upload (max 4.5 MB)
+    - base64-encoded string (max 4.5 MB)
+    - data URL (max 4.5 MB)
+    - public URL (up to 35 MB)
+  notes: >-
+    Binary, Base64, and Data URL inputs are limited to 4.5 MB on the Pay As You Go plan; use the URL
+    option for files up to 35 MB. Higher limits available via sales.
+error_envelope:
+  shape: '{ "error": "<code>", "message": "<human readable>" }'
+  standard: custom (not RFC 9457)
+  see: errors/automat-problem-types.yml
+versioning:
+  scheme: spec-version
+  current: '1.0.0'
+timeouts:
+  request_param: timeout
+  range_seconds: [1, 300]

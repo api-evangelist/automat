@@ -1,0 +1,33 @@
+generated: '2026-07-18'
+method: searched
+source: https://runautomat.com/llms.txt
+docs: https://trust.runautomat.com/
+standards:
+  - id: oauth2
+    conforms: false
+    evidence: Extract API uses http bearer (API key) auth, not OAuth2.
+  - id: oidc
+    conforms: false
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: Errors use a custom {error,message} envelope, not application/problem+json.
+  - id: soc2
+    conforms: true
+    evidence: "Automat states SOC 2 certified (llms.txt; trust.runautomat.com)."
+  - id: iso-27001
+    conforms: true
+    evidence: "Automat states ISO 27001 certified (llms.txt; trust.runautomat.com)."
+  - id: hipaa
+    conforms: true
+    evidence: "Automat states HIPAA certified/compliant (llms.txt; trust.runautomat.com)."
+  - id: gdpr
+    conforms: true
+    evidence: "Automat states GDPR compliant (llms.txt; trust.runautomat.com)."
+compliance_program:
+  published: true
+  url: https://trust.runautomat.com/
+  certifications:
+    - SOC 2
+    - ISO 27001
+    - HIPAA
+    - GDPR

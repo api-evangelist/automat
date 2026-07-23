@@ -1,0 +1,26 @@
+generated: '2026-07-18'
+method: derived
+source: openapi/automat-extract-openapi.json
+entities:
+  - name: Extractor
+    description: >-
+      A configured extraction template that defines the output schema. Referenced by extractorId (and
+      optionally extractorVersionId) on an extract request. Created/managed in the Automat dashboard
+      or via the API; not itself modeled as a schema in the published Extract OpenAPI.
+    id_field: extractorId
+    version_field: extractorVersionId
+  - name: ExtractResponse
+    description: Response from a successful extraction; carries `data` matching the extractor's schema.
+    fields:
+      - data (object) — extracted data matching the extractor's configured schema
+  - name: ErrorResponse
+    description: Standard error envelope.
+    fields:
+      - error (string) — machine-readable error code
+      - message (string) — human-readable error message
+relationships:
+  - from: ExtractResponse
+    type: belongs_to
+    to: Extractor
+    via: extractorId
+    note: Each extraction result is produced by a specific extractor (and optional version).

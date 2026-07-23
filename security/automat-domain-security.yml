@@ -1,0 +1,29 @@
+generated: '2026-07-18'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: www.runautomat.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct 11 01:31:28 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+- host: docs.runautomat.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Aug 22 08:42:33 2026 GMT
+  hsts: true
+  hsts_max_age: 63072000
+- host: studio.runautomat.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Aug 21 00:45:19 2026 GMT
+  hsts: true
+  hsts_max_age: 63072000
+domains:
+- domain: runautomat.com
+  dnssec: true
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: quarantine
