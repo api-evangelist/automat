@@ -1,0 +1,663 @@
+{
+  "item": [
+    {
+      "id": "1719f49e-4565-4f66-be41-e25220617386",
+      "name": "extract",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a47bf5da-7bd4-49c9-9db6-4708fc0b8ab2",
+          "name": "Extract Document",
+          "request": {
+            "name": "Extract Document",
+            "description": {
+              "content": "Extract structured data from a document using a configured extractor.\n\nUpload a document (PDF, image, or other supported format) along with an extractor ID,\nand receive the extracted data matching your extractor's schema.\n\n**File Input Options:**\n- **Binary upload**: Directly upload the file (max 4.5 MB)\n- **Base64**: Pass base64-encoded file content (max 4.5 MB)\n- **Data URL**: Pass a data URL (max 4.5 MB)\n- **URL**: Pass a publicly accessible URL to the document (up to 35 MB)\n\n**File Size Limits:**\nBinary, Base64, and Data URL inputs are limited to **4.5 MB** on the Pay As You Go plan.\nFor larger files up to **35 MB**, use the URL option.\nNeed higher limits? Contact sales at https://runautomat.com/contact",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "extract"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "extractorId",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "(Required) The unique identifier of the extractor to use for extraction.\nYou can find this in the Automat dashboard or when creating an extractor via the API."
+                },
+                {
+                  "key": "file",
+                  "type": "file",
+                  "description": "(Required) The document to extract data from. Can be:\n- A binary file upload\n- A URL string (http:// or https://)\n- A base64-encoded string\n- A data URL string"
+                },
+                {
+                  "key": "mimeType",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "The MIME type of the file. Required when `file` is a string (URL, base64, or data URL).\nExamples: `application/pdf`, `image/png`, `image/jpeg`"
+                },
+                {
+                  "key": "filename",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "Optional filename for the document. If not provided, will be inferred from \nthe File object name or URL path."
+                },
+                {
+                  "key": "extractorVersionId",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "Pin extraction to a specific extractor version"
+                },
+                {
+                  "key": "config",
+                  "value": "{\"key_0\":{},\"key_1\":{}}",
+                  "type": "text",
+                  "description": "Override model configuration for this request"
+                },
+                {
+                  "key": "timeout",
+                  "value": "<integer>",
+                  "type": "text",
+                  "description": "Timeout in seconds (1-300)"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "f71ddc2a-551d-4a6c-b970-6eb4ab9409ff",
+              "name": "Response with status 200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "extract"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Bearer authentication",
+                    "key": "Authorization",
+                    "value": "string"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) The unique identifier of the extractor to use for extraction.\nYou can find this in the Automat dashboard or when creating an extractor via the API.",
+                        "type": "text/plain"
+                      },
+                      "key": "extractorId",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "(Required) The document to extract data from. Can be:\n- A binary file upload\n- A URL string (http:// or https://)\n- A base64-encoded string\n- A data URL string",
+                        "type": "text/plain"
+                      },
+                      "key": "file",
+                      "value": "<binary>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "The MIME type of the file. Required when `file` is a string (URL, base64, or data URL).\nExamples: `application/pdf`, `image/png`, `image/jpeg`",
+                        "type": "text/plain"
+                      },
+                      "key": "mimeType",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Optional filename for the document. If not provided, will be inferred from \nthe File object name or URL path.",
+                        "type": "text/plain"
+                      },
+                      "key": "filename",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Pin extraction to a specific extractor version",
+                        "type": "text/plain"
+                      },
+                      "key": "extractorVersionId",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Override model configuration for this request",
+                        "type": "text/plain"
+                      },
+                      "key": "config",
+                      "value": "{\"key_0\":{},\"key_1\":{}}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Timeout in seconds (1-300)",
+                        "type": "text/plain"
+                      },
+                      "key": "timeout",
+                      "value": "<integer>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"key_0\": {},\n    \"key_1\": {}\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "456e42f3-d543-415d-9be6-215c55b2ae3b",
+              "name": "The request is malformed or missing required fields.\nCheck that you've provided all required fields: `file` and `extractorId`.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "extract"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Bearer authentication",
+                    "key": "Authorization",
+                    "value": "string"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) The unique identifier of the extractor to use for extraction.\nYou can find this in the Automat dashboard or when creating an extractor via the API.",
+                        "type": "text/plain"
+                      },
+                      "key": "extractorId",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "(Required) The document to extract data from. Can be:\n- A binary file upload\n- A URL string (http:// or https://)\n- A base64-encoded string\n- A data URL string",
+                        "type": "text/plain"
+                      },
+                      "key": "file",
+                      "value": "<binary>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "The MIME type of the file. Required when `file` is a string (URL, base64, or data URL).\nExamples: `application/pdf`, `image/png`, `image/jpeg`",
+                        "type": "text/plain"
+                      },
+                      "key": "mimeType",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Optional filename for the document. If not provided, will be inferred from \nthe File object name or URL path.",
+                        "type": "text/plain"
+                      },
+                      "key": "filename",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Pin extraction to a specific extractor version",
+                        "type": "text/plain"
+                      },
+                      "key": "extractorVersionId",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Override model configuration for this request",
+                        "type": "text/plain"
+                      },
+                      "key": "config",
+                      "value": "{\"key_0\":{},\"key_1\":{}}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Timeout in seconds (1-300)",
+                        "type": "text/plain"
+                      },
+                      "key": "timeout",
+                      "value": "<integer>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0251b0ab-d328-4c44-acc6-8ed98a311c3a",
+              "name": "The API key is missing, invalid, or has been revoked.\nEnsure you're using a valid API key in the `Authorization: Bearer <api_key>` header.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "extract"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Bearer authentication",
+                    "key": "Authorization",
+                    "value": "string"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) The unique identifier of the extractor to use for extraction.\nYou can find this in the Automat dashboard or when creating an extractor via the API.",
+                        "type": "text/plain"
+                      },
+                      "key": "extractorId",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "(Required) The document to extract data from. Can be:\n- A binary file upload\n- A URL string (http:// or https://)\n- A base64-encoded string\n- A data URL string",
+                        "type": "text/plain"
+                      },
+                      "key": "file",
+                      "value": "<binary>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "The MIME type of the file. Required when `file` is a string (URL, base64, or data URL).\nExamples: `application/pdf`, `image/png`, `image/jpeg`",
+                        "type": "text/plain"
+                      },
+                      "key": "mimeType",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Optional filename for the document. If not provided, will be inferred from \nthe File object name or URL path.",
+                        "type": "text/plain"
+                      },
+                      "key": "filename",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Pin extraction to a specific extractor version",
+                        "type": "text/plain"
+                      },
+                      "key": "extractorVersionId",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Override model configuration for this request",
+                        "type": "text/plain"
+                      },
+                      "key": "config",
+                      "value": "{\"key_0\":{},\"key_1\":{}}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Timeout in seconds (1-300)",
+                        "type": "text/plain"
+                      },
+                      "key": "timeout",
+                      "value": "<integer>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "91a87762-6734-4b06-a26e-20f5ef7a7999",
+              "name": "The extraction could not be completed. This may occur if:\n- The extractor ID doesn't exist or you don't have access to it\n- The document format is not supported\n- The document could not be processed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "extract"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Bearer authentication",
+                    "key": "Authorization",
+                    "value": "string"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) The unique identifier of the extractor to use for extraction.\nYou can find this in the Automat dashboard or when creating an extractor via the API.",
+                        "type": "text/plain"
+                      },
+                      "key": "extractorId",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "(Required) The document to extract data from. Can be:\n- A binary file upload\n- A URL string (http:// or https://)\n- A base64-encoded string\n- A data URL string",
+                        "type": "text/plain"
+                      },
+                      "key": "file",
+                      "value": "<binary>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "The MIME type of the file. Required when `file` is a string (URL, base64, or data URL).\nExamples: `application/pdf`, `image/png`, `image/jpeg`",
+                        "type": "text/plain"
+                      },
+                      "key": "mimeType",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Optional filename for the document. If not provided, will be inferred from \nthe File object name or URL path.",
+                        "type": "text/plain"
+                      },
+                      "key": "filename",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Pin extraction to a specific extractor version",
+                        "type": "text/plain"
+                      },
+                      "key": "extractorVersionId",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Override model configuration for this request",
+                        "type": "text/plain"
+                      },
+                      "key": "config",
+                      "value": "{\"key_0\":{},\"key_1\":{}}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Timeout in seconds (1-300)",
+                        "type": "text/plain"
+                      },
+                      "key": "timeout",
+                      "value": "<integer>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1c911944-1cdd-494f-ab4d-7bbe591f3ae0",
+              "name": "An unexpected error occurred. Please try again or contact support.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "extract"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Bearer authentication",
+                    "key": "Authorization",
+                    "value": "string"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) The unique identifier of the extractor to use for extraction.\nYou can find this in the Automat dashboard or when creating an extractor via the API.",
+                        "type": "text/plain"
+                      },
+                      "key": "extractorId",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "(Required) The document to extract data from. Can be:\n- A binary file upload\n- A URL string (http:// or https://)\n- A base64-encoded string\n- A data URL string",
+                        "type": "text/plain"
+                      },
+                      "key": "file",
+                      "value": "<binary>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "The MIME type of the file. Required when `file` is a string (URL, base64, or data URL).\nExamples: `application/pdf`, `image/png`, `image/jpeg`",
+                        "type": "text/plain"
+                      },
+                      "key": "mimeType",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Optional filename for the document. If not provided, will be inferred from \nthe File object name or URL path.",
+                        "type": "text/plain"
+                      },
+                      "key": "filename",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Pin extraction to a specific extractor version",
+                        "type": "text/plain"
+                      },
+                      "key": "extractorVersionId",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Override model configuration for this request",
+                        "type": "text/plain"
+                      },
+                      "key": "config",
+                      "value": "{\"key_0\":{},\"key_1\":{}}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Timeout in seconds (1-300)",
+                        "type": "text/plain"
+                      },
+                      "key": "timeout",
+                      "value": "<integer>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://studio.runautomat.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "7347e904-869b-4a77-ae97-dc2ff5e29fae",
+    "name": "extract API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

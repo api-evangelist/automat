@@ -1,0 +1,75 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "extract API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "extract",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Extract Document",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://studio.runautomat.com/api/extract",
+            "headers": [
+              {
+                "name": "Authorization",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "extractorId",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "file",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "mimeType",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "filename",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "extractorVersionId",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "config",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "timeout",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Extract structured data from a document using a configured extractor.\n\nUpload a document (PDF, image, or other supported format) along with an extractor ID,\nand receive the extracted data matching your extractor's schema.\n\n**File Input Options:**\n- **Binary upload**: Directly upload the file (max 4.5 MB)\n- **Base64**: Pass base64-encoded file content (max 4.5 MB)\n- **Data URL**: Pass a data URL (max 4.5 MB)\n- **URL**: Pass a publicly accessible URL to the document (up to 35 MB)\n\n**File Size Limi"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
