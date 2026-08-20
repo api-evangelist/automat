@@ -52,6 +52,8 @@ apis:
   humanURL: https://docs.runautomat.com/api-reference
   baseURL: https://studio.runautomat.com
   tags:
+  - Extract
+  tags_raw:
   - extract
   properties:
   - type: OpenAPI
