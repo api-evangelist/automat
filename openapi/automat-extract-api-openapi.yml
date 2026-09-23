@@ -1,12 +1,12 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: extract API
+  title: Extract API
   version: 1.0.0
 servers:
 - url: https://studio.runautomat.com
   description: Production
 tags:
-- name: extract
+- name: Extract
 paths:
   /api/extract:
     post:
@@ -39,7 +39,7 @@ paths:
 
         Need higher limits? Contact sales at https://runautomat.com/contact'
       tags:
-      - extract
+      - Extract
       parameters:
       - name: Authorization
         in: header
@@ -53,7 +53,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/type_extract:ExtractResponse'
+                $ref: '#/components/schemas/type_extract_ExtractResponse'
         '400':
           description: 'The request is malformed or missing required fields.
 
@@ -61,7 +61,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/type_extract:ErrorResponse'
+                $ref: '#/components/schemas/type_extract_ErrorResponse'
         '401':
           description: 'The API key is missing, invalid, or has been revoked.
 
@@ -69,7 +69,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/type_extract:ErrorResponse'
+                $ref: '#/components/schemas/type_extract_ErrorResponse'
         '422':
           description: 'The extraction could not be completed. This may occur if:
 
@@ -81,13 +81,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/type_extract:ErrorResponse'
+                $ref: '#/components/schemas/type_extract_ErrorResponse'
         '500':
           description: An unexpected error occurred. Please try again or contact support.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/type_extract:ErrorResponse'
+                $ref: '#/components/schemas/type_extract_ErrorResponse'
       requestBody:
         content:
           multipart/form-data:
@@ -135,21 +135,7 @@ paths:
               - file
 components:
   schemas:
-    type_extract:ErrorResponse:
-      type: object
-      properties:
-        error:
-          type: string
-          description: Machine-readable error code (e.g., "bad_request", "unauthorized")
-        message:
-          type: string
-          description: Human-readable error message describing what went wrong
-      required:
-      - error
-      - message
-      description: Standard error response format
-      title: ErrorResponse
-    type_extract:ExtractResponse:
+    type_extract_ExtractResponse:
       type: object
       properties:
         data:
@@ -163,6 +149,20 @@ components:
       - data
       description: Response from a successful extraction request
       title: ExtractResponse
+    type_extract_ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+          description: Machine-readable error code (e.g., "bad_request", "unauthorized")
+        message:
+          type: string
+          description: Human-readable error message describing what went wrong
+      required:
+      - error
+      - message
+      description: Standard error response format
+      title: ErrorResponse
   securitySchemes:
     BearerAuthScheme:
       type: http
