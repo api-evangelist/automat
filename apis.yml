@@ -54,6 +54,17 @@ tags:
 - Enterprise Saas
 - Automation
 - RPA
+- Document Extraction
+- IDP
+- iPaaS
+- AI Agents
+- Computer Use
+- Document Processing
+tags_raw:
+- Company
+- Enterprise Saas
+- Automation
+- RPA
 - Robotic Process Automation
 - Document Extraction
 - IDP
@@ -63,7 +74,7 @@ tags:
 - Document Processing
 apis:
 - aid: automat:automat-extract-api
-  name: Automat extract API
+  name: Automat Extract API
   description: The extract API from Automat — 1 operation(s) for extract.
   humanURL: https://docs.runautomat.com/api-reference
   baseURL: https://studio.runautomat.com
