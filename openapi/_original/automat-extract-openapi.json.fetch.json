@@ -1,0 +1,12 @@
+{
+ "url": "https://docs.runautomat.com/openapi/extract.yaml",
+ "requested_url": "https://docs.runautomat.com/openapi/extract.yaml",
+ "status": 200,
+ "content_type": "application/x-yaml; charset=utf-8",
+ "bytes": 5879,
+ "sha256": "9e850d49dbc83365aff6b51b0d0eaedadfaaa9fb901611e913bbcc7785d60115",
+ "fetched_at": "2026-10-04",
+ "fetched_by": "APIEvangelist-Harvest/1.0 (+https://apievangelist.com)",
+ "match": "equivalent",
+ "note": "Re-fetched from the provider by verify-openapi-sources.py; the provider's current document describes the same operations (Jaccard 1.0), but the bytes differ, so the archive is an earlier or reformatted copy."
+}
