@@ -7,14 +7,17 @@ front_door_ai:
   probed_at: '2026-09-17'
   host: www.runautomat.com
   final_host: runautomat.com
-  ownership: inherited
+  ownership: own
   owner: automat
   shares_host_with: null
-  inherited_from: runautomat.com
+  inherited_from: null
+  alias_of: runautomat.com
   verdict: scored
-  score: null
+  score: 26
+  band: 6
+  band_label: dominant
   host_score: 26
-  density: null
+  density: 18.71
   words: 1390
   tiers:
     agentic: 9
