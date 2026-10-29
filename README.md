@@ -64,6 +64,117 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Automat is a company surfaced as a portfolio company of initialized-capital and added to the API Evangelist network as a stub for enrichment. Sector: enterprise-saas. This profile is a lead awaiting the enrichment pipeline.
+Automat builds AI agents that operate computers the way people do, replacing legacy RPA tools like UiPath, Automation Anywhere, and Blue Prism with intelligent, self-healing managed automations. Founded in 2022 by ex-Google engineers, the platform combines UI-based AI agents (RPA using Computer Use), AI document extraction (IDP with vision language models), and API-based automations (iPaaS) into unified workflows delivered as a managed service. Automat exposes a REST Extract API (studio.runautomat.com) for pulling structured data from PDFs, images, and other documents against a configured extractor, plus a hosted MCP server for AI client integration. Used across banking, mortgage and lending, insurance, manufacturing, healthcare, and e-commerce operations, with SOC 2, GDPR, HIPAA, and ISO 27001 certification.
 
-Backed by: initialized-capital — https://runautomat.com/
+**Areas:** Company · Enterprise Saas · Automation · RPA · Document Extraction · Intelligent Document Processing · iPaaS · AI Agents · Computer Use · Document Processing
+
+## Automat on APIs.io
+
+Everything profiled for Automat is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/automat/](https://apis.io/providers/automat/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [Automat Extract API](https://apis.io/apis/automat/automat-extract-api/) — The extract API from Automat — 1 operation(s) for extract.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [automat-docs](https://apis.io/servers/automat/automat-docs/)
+
+#### Agentic access (1)
+
+Which operations an agent can call, which act, and which need a human in the loop.
+
+- [Automat Agentic Access](https://apis.io/agentic-access/automat/automat-agentic-access/)
+
+#### Collections (1)
+
+Postman and Open Collection request collections.
+
+- [extract API](https://apis.io/collections/automat/open-automat-extract-api/)
+
+#### Overlays (1)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [Automat Extract Overlay](https://apis.io/overlays/automat/automat-extract-overlay/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Automat Authentication](https://apis.io/security/automat/automat-authentication/)
+- [Automat Domain Security](https://apis.io/security/automat/automat-domain-security/)
+- [Automat Trust Center](https://apis.io/security/automat/automat-trust-center/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.runautomat.com/)
+- [Documentation](https://docs.runautomat.com/)
+- [Getting started](https://docs.runautomat.com/guides/getting-started/introduction)
+- [API reference](https://docs.runautomat.com/api-reference)
+- [Support](https://www.runautomat.com/contact)
+- [Blog](https://www.runautomat.com/blog)
+- [Compliance](https://trust.runautomat.com/)
+- [Trust centre](https://trust.runautomat.com/)
+- [Terms of service](https://www.runautomat.com/terms-of-service)
+
+## API Evangelist rating
+
+**Kin Score 34.4** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 71.7 |
+| Contract quality | 47.1 |
+| Contract governance | 18.2 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 55.4 |
+| Access clarity | 10.5 |
+
+**Agent readiness 27.4** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | documented (partial credit) |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | verified |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 20.6** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/automat/](https://apis.io/providers/automat/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Automat: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/automat/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
